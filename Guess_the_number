@@ -1,0 +1,32 @@
+#Wlcome to number guessing game, First user has to enter the top range for guessing game and then random 
+# function will will genertae the number and you have to guess the number
+
+import random
+toprange=input("Enter your top range number for the Guessing game ")
+
+if toprange.isdigit():
+    toprange=int(toprange)
+
+    if toprange<=0:
+        print("Please enter number greater than 0. ")
+else:
+    print("Make sure to enter a number. ")
+
+random_number=random.randrange(0,toprange)
+guessnum=0
+
+while True:
+    guessnum+=1
+    guess=input("Enter your guess: ")
+    if guess.isdigit():
+        guess=int(guess)
+    else:
+        print("Please make sure to enter the number\n ")
+        continue
+    
+    if guess==random_number:
+        print("Yayy you got it! and you took only "+str(guessnum)+ " guesses")
+        break
+    else:
+        print("OOps wrong guess! ")
+    
